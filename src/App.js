@@ -3,13 +3,18 @@ import {useState} from "react";
 import {sculptureList} from "./components/data.js"
 
 
-function App() {
+export default function App() {
   const [index,setIndex]=useState(0);
   const [showMore, setshowMore]=useState(false);
 
   function handleClick() {
-    setIndex(index+1);
-
+    if(index<sculptureList.length-1){
+      setIndex(index+1)
+    }
+    else{
+      setIndex(index-index)
+    }
+    
   }
   function handleMoreClick(){
     setshowMore(!showMore);
@@ -43,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+
